@@ -38,8 +38,10 @@ if type python2.7 > /dev/null 2> /dev/null; then
 fi
 exec python $OPT "$0" $FLG "$@"
 '''
+from sys import argv
 
 from pox.boot import boot
 
 if __name__ == '__main__':
+  argv.append('barros')
   boot()
