@@ -1,3 +1,5 @@
+from pox.forwarding.l2_multi import WaitingPath
+
 __author__ = 'Roberto Barros'
 
 from barros.roaming import SmartRoamingSwitch
@@ -13,6 +15,9 @@ import random
 from pox.lib.addresses import IPAddr, EthAddr
 
 log = core.getLogger()
+
+# How long is allowable to set up a path?
+PATH_SETUP_TIME = 4
 
 def launch():
     core.registerNew(SmartRoamingSwitch)
